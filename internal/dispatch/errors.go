@@ -6,9 +6,9 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	v1 "github.com/authzed/authzed-go/proto/authzed/api/v1"
+	"github.com/Mukam21/greatDB/internal/sharederrors"
 
-	"github.com/authzed/spicedb/internal/sharederrors"
+	v1 "github.com/authzed/authzed-go/proto/authzed/api/v1"
 	"github.com/authzed/spicedb/pkg/spiceerrors"
 )
 

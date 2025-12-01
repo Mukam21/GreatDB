@@ -4,10 +4,9 @@ import (
 	"context"
 	"errors"
 
+	v1 "github.com/Mukam21/greatDB/pkg/proto/dispatch/v1"
 	"github.com/rs/zerolog"
-
-	log "github.com/authzed/spicedb/internal/logging"
-	v1 "github.com/authzed/spicedb/pkg/proto/dispatch/v1"
+	"github.com/rs/zerolog/log"
 )
 
 // ReadyState represents the ready state of the dispatcher.

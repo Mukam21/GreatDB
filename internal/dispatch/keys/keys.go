@@ -3,9 +3,9 @@ package keys
 import (
 	"context"
 
-	datastoremw "github.com/authzed/spicedb/internal/middleware/datastore"
-	"github.com/authzed/spicedb/internal/namespace"
-	v1 "github.com/authzed/spicedb/pkg/proto/dispatch/v1"
+	"github.com/Mukam21/greatDB/internal/middleware/datastore"
+	"github.com/Mukam21/greatDB/internal/namespace"
+	v1 "github.com/Mukam21/greatDB/pkg/proto/dispatch/v1"
 )
 
 // Handler is an interface defining how keys are computed for dispatching and caching.
@@ -100,7 +100,7 @@ func (c *CanonicalKeyHandler) CheckCacheKey(ctx context.Context, req *v1.Dispatc
 	// a check for `somenamespace:someobject#somerel@somenamespace:someobject#somerel`.
 	if req.ResourceRelation.Namespace != req.Subject.Namespace {
 		// Load the relation to get its computed cache key, if any.
-		ds := datastoremw.MustFromContext(ctx)
+		ds := datastore.MustFromContext(ctx)
 
 		revision, err := ds.RevisionFromString(req.Metadata.AtRevision)
 		if err != nil {
